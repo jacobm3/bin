@@ -10,9 +10,9 @@ curl -u "${USER}:${GITHUB_TOKEN}" https://api.github.com/user/repos -d "{\"name\
 
 mkdir $1
 cd $1
-echo "# $1" >> README.md
 git init
-git add README.md
+#echo "# $1" >> README.md
+#git add README.md
 git commit -m "first commit"
 git remote add origin https://${USER}:${GITHUB_TOKEN}@github.com/jacobm3/${1}.git
 git push -u origin master
