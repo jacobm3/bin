@@ -1,0 +1,20 @@
+#!/bin/bash 
+
+REPO_NAME=${PWD##*/}
+USER=jacobm3
+
+test -z $REPO_NAME && echo "Repo name required." 1>&2 && exit 1
+
+echo "Creating repo https://github.com/jacobm3/${REPO_NAME}.git"
+curl -u "${USER}:${GITHUB_TOKEN}" https://api.github.com/user/repos -d "{\"name\":\"$REPO_NAME\"}"
+
+git init
+#echo "# $1" >> README.md
+#git add README.md
+git add -A
+git commit -m "first commit"
+git remote add origin https://${USER}:${GITHUB_TOKEN}@github.com/jacobm3/${REPO_NAME}.git
+git push -u origin master
+git config credential.helper store
+
+
