@@ -40,7 +40,11 @@ https://github.com/Sycnex/Windows10Debloater
 
 
 ## install WSL2/Ubuntu, then set noatime in WSL, /etc/fstab
-
+https://docs.microsoft.com/en-us/windows/wsl/install-manual
+```
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+wsl --set-default-version 2
+```
 `LABEL=cloudimg-rootfs   /        ext4   defaults,noatime        0 0`
 
 
