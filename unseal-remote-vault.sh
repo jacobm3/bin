@@ -1,6 +1,9 @@
 #!/bin/bash
 
 # https://www.vaultproject.io/api-docs/system/unseal#submit-unseal-key
+#
+# Run from cron on a trusted remote machine:
+# * * * * * /home/ubuntu/bin/unseal-remote-vault.sh
 
 VAULT_ADDR=https://vault.cosmic-security.net:8200
 
