@@ -62,4 +62,5 @@ https://unsplash.com/
   sudo apt-get update
   sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
   sudo usermod -a -G docker ubuntu
+  sudo update-alternatives --set iptables /usr/sbin/iptables-legacy
   ```
