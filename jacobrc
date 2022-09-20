@@ -67,7 +67,7 @@ alias tfaa='time terraform apply -auto-approve | tee apply.out'
 alias tfp='time terraform plan'
 alias tfs='terraform show tf.plan.out | egrep -i '\''region|zone|will be|name|plan:'\'''
 alias v='vim'
-alias vl='vault '
+alias vl='vault ' vtl='echo "vault token lookup"; vault token lookup | grep -v "^id" '
 alias wh='which'
 alias zles='zless'
 
