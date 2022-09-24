@@ -16,14 +16,6 @@ sudo apt-get install -y nmap bzip2 netcat net-tools git htop sysstat iotop vim-n
 #sudo apt-get install -y terraform vault
 
 # add environment
-cd /home/$USER
-git clone https://github.com/jacobm3/gbin.git
-chmod +x gbin/*
-
-echo '. ~/gbin/jacobrc'  >> /home/$USER/.bashrc
-
-sudo chown -R $USER:$USER /home/$USER
-
 cd /home/$USER/gbin && sudo cp pg ng /usr/local/bin
 
 cd /home/$USER && mkdir -p .vim/colors 
