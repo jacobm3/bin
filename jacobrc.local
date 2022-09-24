@@ -1,0 +1,6 @@
+echo -n 'docker '
+pgrep docker || sudo service docker start
+
+echo -n 'cron   '
+pgrep cron || sudo service cron start
+
