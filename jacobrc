@@ -35,7 +35,7 @@ alias ht='history | tail $*'
 alias ifu='ifconfig | egrep "Link|MTU|inet"; netstat -rn'
 alias j='jobs'
 alias jq='jq -C'
-alias kc='kubectl'
+alias k='kubectl'
 alias l='ls'
 alias la='ls -A'
 alias ld='ls -ld'
@@ -81,6 +81,8 @@ complete -C vault vault
 export JQ_COLORS='0;37:0;39:0;39:0;37:0;37:1;37:1;37'
 
 export TF_LOG_PATH=tf.log.debug TF_CLI_ARGS_plan="-out tf.plan.out" TF_LOG=debug
+
+which kubectl && source <(kubectl completion bash)
 
 if [ -e ~/.bashrc.local ]; then . ~/.bashrc.local; fi
 if [ -e ~/.jacobrc.local ]; then . ~/.jacobrc.local; fi
