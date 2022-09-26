@@ -33,6 +33,7 @@ alias h='history'
 alias hg='history | egrep '
 alias ht='history | tail $*'
 alias ifu='ifconfig | egrep "Link|MTU|inet"; netstat -rn'
+alias ins=instruqt
 alias j='jobs'
 alias jq='jq -C'
 alias k='kubectl'
