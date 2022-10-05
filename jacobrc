@@ -21,7 +21,8 @@ alias bd='base64 -d'
 alias c='cat'
 alias cdi='cd /etc/init.d'
 alias cx='chmod +x'
-alias d='docker' dc='docker-compose' docker-rm-all="docker ps -a | grep -v CONTAINER | awk '{print \$1}' | xargs docker stop; docker ps -a | grep -v CONTAINER | awk '{print \$1}' | xargs docker rm; docker volume ls | grep -v DRIVER | awk '{print \$2}' | xargs docker volume rm"
+alias d='docker' dc='docker-compose' 
+alias docker-rm-all="docker ps -a | grep -v CONTAINER | awk '{print \$1}' | xargs docker stop; docker ps -a | grep -v CONTAINER | awk '{print \$1}' | xargs docker rm; docker volume ls | grep -v DRIVER | awk '{print \$2}' | xargs docker volume rm; docker network prune -f"
 alias egrep='egrep --color=auto'
 alias em="sed 's/,/\n/g' | sed 's/^ //'; echo 'Jacob Martinson <jacob.martinson@astronomer.io>'"
 alias f='fg'
