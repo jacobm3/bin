@@ -8,6 +8,7 @@ if [ "$USER" == 'root' ]; then export PS1="$R\u$O@\h:\w         \D{%F} \t\n# "; 
 bind '"\C-i":complete'; set -o vi
 ls --color=auto &>/dev/null; if [ 0 -eq 0 ]; then alias ls='ls --color=auto' lh='ls -lh' lha='ls -lha' lhtr='ls -lhtr'; fi;
 export EDITOR=vim PAGER=less
+export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
 
 alias a='alias'
 alias ac='apt-cache'
