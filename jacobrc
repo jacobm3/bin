@@ -13,6 +13,7 @@ export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
 alias a='alias'
 alias ac='apt-cache'
 alias acs='apt-cache search'
+alias add='paste -s -d+ - | bc'
 alias as=astro
 alias ag='apt-get'
 alias agud='apt-get update'
@@ -78,6 +79,8 @@ alias zles='zless'
 gpush () { git commit -am "$1"; git push; }
 mcd () { mkdir -p $1; cd $1; }
 pcert () { openssl x509 -in $1 -text -noout; }
+pc () { tr -s ' ' | cut -d ' ' -f $1; }
+pch () { tr -s ' ' | cut -d ' ' -f $1 | tail -n +2; }
 complete -C kubectl kc
 complete -C docker d
 complete -C terraform tf
