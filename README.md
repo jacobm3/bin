@@ -12,7 +12,7 @@ sudo apt install -y curl git
 
 git clone https://github.com/jacobm3/gbin.git && echo ". ~/gbin/jacobrc" >> ~/.bashrc
 
-echo ". ~/gbin/jacobrc" >> ~/.bash_profile
+echo ". ~/gbin/jacobrc" >> ~/.bash_profile && ln -s gbin/jacobrc .jacobrc
 
 sudo apt install curl && curl -fsSL https://raw.githubusercontent.com/jacobm3/gbin/main/ubuntu-setup.sh | bash 
 
