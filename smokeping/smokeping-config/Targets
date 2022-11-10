@@ -1,5 +1,7 @@
 *** Targets ***
 
+
+
 probe = FPing
 
 menu = Top
@@ -11,6 +13,67 @@ remark = Welcome to the SmokePing website of WORKS Company. \
 
 menu = Internet Sites
 title = Internet Sites
+
+++ AstronomerCloudTcp443
+menu = Astronomer Cloud (tcp/443)
+title = cloud.astronomer.io (tcp/443)
+probe = TCPPing
+host = cloud.astronomer.io
+
+++ AstronomerRegistry
+menu = Astronomer Registry
+title = registry.astronomer.io (ping)
+host = registry.astronomer.io
+
+++ AstronomerRegistryTcp443
+menu = Astronomer Registry (tcp/443)
+title = registry.astronomer.io (tcp/443)
+probe = TCPPing
+host = registry.astronomer.io
+
+++ AstronomerWebsite
+menu = Astronomer Website
+title = astronomer.io (ping)
+host = astronomer.io
+
+++ AstronomerWebsiteTcp443
+menu = Astronomer Website (tcp/443)
+title = astronomer.io (tcp/443)
+probe = TCPPing
+host = astronomer.io
+
+++ HashiCorpHCPPortal
+menu = HashiCorp HCP Portal
+title = portal.cloud.hashicorp.com (ping)
+host = portal.cloud.hashicorp.com
+
+++ HashiCorpHCPPortalTcp443
+menu = HashiCorp HCP Portal (tcp/443)
+title = portal.cloud.hashicorp.com (tcp/443)
+probe = TCPPing
+host = portal.cloud.hashicorp.com
+
+++ HashiCorpTerraformRegistry
+menu = HashiCorp Terraform Registry
+title = Terraform Registry
+host = registry.terraform.io
+
+++ HashiCorpTerraformRegistryTcp443
+menu = HashiCorp Terraform Registry (tcp/443)
+title = registry.terraform.io (tcp/443)
+probe = TCPPing
+host = registry.terraform.io
+
+++ OlezkaGlobal
+menu = Olezka Global
+title = Olezka Global
+host = olezkaglobal.com
+
+++ OlezkaGlobalTcp443
+menu = Olezka Global (tcp/443)
+title = Olezka Global (tcp/443)
+probe = TCPPing
+host = olezkaglobal.com
 
 ++ Facebook
 menu = Facebook

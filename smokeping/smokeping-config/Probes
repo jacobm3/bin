@@ -14,3 +14,12 @@ binary = /usr/bin/dig
 lookup = google.com
 pings = 5
 step = 60
+
++ TCPPing
+binary = /usr/bin/tcpping 
+forks = 5
+offset = 50%
+step = 60
+timeout = 15
+pings = 5
+port = 443
