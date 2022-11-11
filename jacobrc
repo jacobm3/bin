@@ -25,7 +25,7 @@ alias cdi='cd /etc/init.d'
 alias cpuinfo='egrep "model name|cores" /proc/cpuinfo|head -2; grep MHz /proc/cpuinfo | head -1'
 alias cx='chmod +x'
 alias d='docker' 
-alias dc='docker-compose' dcr'docker-compose restart'
+alias dc='docker-compose' dcr='docker-compose restart'
 alias dt='docker exec -it'
 alias dkrmall="docker ps -a | grep -v CONTAINER | awk '{print \$1}' | xargs docker stop; docker ps -a | grep -v CONTAINER | awk '{print \$1}' | xargs docker rm; docker volume ls | grep -v DRIVER | awk '{print \$2}' | xargs docker volume rm; docker network prune -f"
 alias egrep='egrep --color=auto'
