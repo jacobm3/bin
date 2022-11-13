@@ -60,6 +60,7 @@ alias lsa='ls -a'
 alias ltr='ls -ltr'
 alias ltt='ls -ltr | tail'
 alias md='mkdir'
+alias p=ping
 alias p1='ping 1.1.1.1'
 alias pug='ps aux | egrep -i '
 alias py='python3'
