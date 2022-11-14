@@ -1,0 +1,21 @@
+#!/usr/bin/python3
+#
+# Reads a single JWKS from STDIN and prints it in PEM
+
+import json
+import jwt
+import sys
+
+from cryptography.hazmat.primitives import serialization
+
+webkey = sys.stdin.read()
+
+webkey = json.loads(webkey)
+
+public_key = jwt.algorithms.RSAAlgorithm.from_jwk(webkey)
+pubk_bytes = public_key.public_bytes(encoding=serialization.Encoding.PEM,
+    format=serialization.PublicFormat.SubjectPublicKeyInfo)
+
+print(pubk_bytes.decode())
+
+

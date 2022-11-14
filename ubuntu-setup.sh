@@ -10,10 +10,36 @@ echo all | sudo tee /etc/gcrypt/hwf.deny
 curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
 sudo apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
 sudo apt-get update
-sudo apt-get upgrade -y
-sudo apt-get install -y nmap bzip2 netcat net-tools git htop sysstat iotop vim-nox
+sudo apt-get install -y nmap bzip2 netcat net-tools git htop sysstat iotop vim-nox python3-pip jq
 
-#sudo apt-get install -y terraform vault
+sudo apt-get install -y terraform vault
+
+# Install Docker CE
+sudo apt-get remove docker docker-engine docker.io containerd runc
+sudo apt-get install \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+sudo update-alternatives --set iptables /usr/sbin/iptables-legacy
+sudo usermod -G docker -a ubuntu
+
+sudo apt-get upgrade -y
+
+# Install Astronomer CLI
+curl -sSL install.astronomer.io | sudo bash -s
+
+# Install k3s 
+curl -sfL https://get.k3s.io | sh -
+
+
 
 # add environment
 cd /home/$USER/gbin && sudo cp pg ng /usr/local/bin
