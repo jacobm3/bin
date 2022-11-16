@@ -10,7 +10,7 @@
 # */10 10-22 * * 0,6 /home/ubuntu/gbin/check_opti3010_smokeping.sh
 
 
-URL='http://10.0.0.200/smokeping/'
+URL='http://10.0.0.200:81/smokeping/'
 
 curl -s $URL >/dev/null  || \
 curl -s -X POST -H 'Content-type: application/json' \

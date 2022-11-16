@@ -96,7 +96,7 @@ export JQ_COLORS='0;37:0;39:0;39:0;37:0;37:1;37:1;37'
 
 export TF_LOG_PATH=tf.log.debug TF_CLI_ARGS_plan="-out tf.plan.out" TF_LOG=debug
 
-which kubectl && source <(kubectl completion bash) && complete -o default -F __start_kubectl k
+which kubectl >/dev/null && source <(kubectl completion bash) && complete -o default -F __start_kubectl k
 
 if [ -e ~/.bashrc.local ]; then . ~/.bashrc.local; fi
 if [ -e ~/.jacobrc.local ]; then . ~/.jacobrc.local; fi
