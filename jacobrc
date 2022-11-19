@@ -28,7 +28,12 @@ alias cx='chmod +x'
 alias d='docker' 
 alias dc='docker-compose' dcr='docker-compose restart'
 alias dt='docker exec -it' ds='docker stats'
-alias dkrmall="docker ps -a | grep -v CONTAINER | awk '{print \$1}' | xargs docker stop; docker ps -a | grep -v CONTAINER | awk '{print \$1}' | xargs docker rm; docker volume ls | grep -v DRIVER | awk '{print \$2}' | xargs docker volume rm; docker network prune -f"
+alias dkrmall="echo Removing any containers.
+               docker ps -a | grep -v CONTAINER | awk '{print \$1}' | xargs docker rm -f 2>/dev/null; 
+               echo Removing any volumes.
+               docker volume ls | grep -v DRIVER | awk '{print \$2}' | xargs docker volume rm 2>/dev/null; 
+               echo Pruning any networks.
+               docker network prune -f"
 alias egrep='egrep --color=auto'
 alias em="sed 's/,/\n/g' | sed 's/^ //'; echo 'Jacob Martinson <jacob.martinson@astronomer.io>'"
 alias f='fg'
