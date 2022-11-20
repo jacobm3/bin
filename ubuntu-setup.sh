@@ -29,6 +29,15 @@ echo \
 sudo apt-get update
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
 sudo update-alternatives --set iptables /usr/sbin/iptables-legacy
+sudo update-alternatives --set ip6tables /usr/sbin/ip6tables-legacy
+echo '#'
+echo '#'
+echo '#'
+echo '# YOU MUST REBOOT FOR THE DOCKER-CE IPTABLES CHANGE TO TAKE EFFECT!!!
+echo '#'
+echo '#'
+echo '#'
+
 sudo usermod -G docker -a ubuntu
 
 #sudo apt-get upgrade -y
