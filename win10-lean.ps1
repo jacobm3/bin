@@ -1,5 +1,6 @@
 Set-MpPreference -DisableRealtimeMonitoring $true
 fsutil behavior set disablelastaccess 1
+powercfg.exe /hibernate off
 Add-MpPreference -ExclusionPath "C:\Program Files"
 Add-MpPreference -ExclusionPath "C:\Program Files (x86)"
 Add-MpPreference -ExclusionPath "%TEMP%\WinGet"
