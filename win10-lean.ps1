@@ -4,9 +4,17 @@ powercfg.exe /hibernate off
 Add-MpPreference -ExclusionPath "C:\Windows"
 Add-MpPreference -ExclusionPath "C:\Program Files"
 Add-MpPreference -ExclusionPath "C:\Program Files (x86)"
+Add-MpPreference -ExclusionPath "D:\Program Files"
+Add-MpPreference -ExclusionPath "D:\Program Files (x86)"
 Add-MpPreference -ExclusionPath "%TEMP%\WinGet"
 Add-MpPreference -ExclusionPath "C:\Users\admin\Desktop"
 Add-MpPreference -ExclusionPath "C:\Users\admin\Downloads"
+Add-MpPreference -ExclusionPath "C:\Users\admin\AppData"
+Add-MpPreference -ExclusionPath "C:\Users\jacob\Desktop"
+Add-MpPreference -ExclusionPath "C:\Users\jacob\Downloads"
+Add-MpPreference -ExclusionPath "C:\Users\jacob\AppData"
+Add-MpPreference -ExclusionPath "D:\Users\jacob"
+
 
 winget uninstall "Cortana"
 winget uninstall "MSN Weather"
