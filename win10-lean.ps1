@@ -27,6 +27,8 @@ Add-MpPreference -ExclusionPath "D:\Users\jacob"
 
 # Once that completes, run https://github.com/Sycnex/Windows10Debloater/blob/master/Windows10DebloaterGUI.ps1 to disable telemetry
 # and perform other debloat techniques
+# or:
+# iwr -useb https://git.io/debloat|iex
 
 # UNINSTALLS
 winget uninstall "Cortana"
