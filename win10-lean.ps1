@@ -17,6 +17,8 @@ Add-MpPreference -ExclusionPath "C:\Users\jacob\Downloads"
 Add-MpPreference -ExclusionPath "C:\Users\jacob\AppData"
 Add-MpPreference -ExclusionPath "D:\Users\jacob"
 
+# Install App Installer https://apps.microsoft.com/store/detail/app-installer/9NBLGGH4NNS1?hl=en-us&gl=us
+
 # Apply Windows Updates manually:  Start > update
 
 # Enable unsigned powershell scripts: Start > developer settings
