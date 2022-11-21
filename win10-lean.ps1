@@ -17,11 +17,14 @@ Add-MpPreference -ExclusionPath "C:\Users\jacob\Downloads"
 Add-MpPreference -ExclusionPath "C:\Users\jacob\AppData"
 Add-MpPreference -ExclusionPath "D:\Users\jacob"
 
-# Start Windows Updates manually:  Start > update
+# Apply Windows Updates manually:  Start > update
 
 # Enable unsigned powershell scripts: Start > developer settings
 
 # Then execute this entire script (ok to rerun the top part)
+
+# Once that completes, run https://github.com/Sycnex/Windows10Debloater/blob/master/Windows10DebloaterGUI.ps1 to disable telemetry
+# and perform other debloat techniques
 
 # UNINSTALLS
 winget uninstall "Cortana"
