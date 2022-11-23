@@ -16,6 +16,7 @@ Add-MpPreference -ExclusionPath "C:\Users\jacob\Desktop"
 Add-MpPreference -ExclusionPath "C:\Users\jacob\Downloads"
 Add-MpPreference -ExclusionPath "C:\Users\jacob\AppData"
 Add-MpPreference -ExclusionPath "D:\Users\jacob"
+Add-MpPreference -ExclusionPath "C:\Windows","C:\Program Files","C:\Program Files (x86)","D:\Program Files","D:\Program Files (x86)","%TEMP%\WinGet","C:\Users","D:\Users"
 
 # Install App Installer https://apps.microsoft.com/store/detail/app-installer/9NBLGGH4NNS1?hl=en-us&gl=us
 
