@@ -1,21 +1,9 @@
 
 # Paste this section into an admin powershell terminal
 Set-MpPreference -DisableRealtimeMonitoring $true
+Set-MpPreference -DisableBehaviorMonitoring $true
 fsutil behavior set disablelastaccess 1
 powercfg.exe /hibernate off
-Add-MpPreference -ExclusionPath "C:\Windows"
-Add-MpPreference -ExclusionPath "C:\Program Files"
-Add-MpPreference -ExclusionPath "C:\Program Files (x86)"
-Add-MpPreference -ExclusionPath "D:\Program Files"
-Add-MpPreference -ExclusionPath "D:\Program Files (x86)"
-Add-MpPreference -ExclusionPath "%TEMP%\WinGet"
-Add-MpPreference -ExclusionPath "C:\Users\admin\Desktop"
-Add-MpPreference -ExclusionPath "C:\Users\admin\Downloads"
-Add-MpPreference -ExclusionPath "C:\Users\admin\AppData"
-Add-MpPreference -ExclusionPath "C:\Users\jacob\Desktop"
-Add-MpPreference -ExclusionPath "C:\Users\jacob\Downloads"
-Add-MpPreference -ExclusionPath "C:\Users\jacob\AppData"
-Add-MpPreference -ExclusionPath "D:\Users\jacob"
 Add-MpPreference -ExclusionPath "C:\Windows","C:\Program Files","C:\Program Files (x86)","D:\Program Files","D:\Program Files (x86)","%TEMP%\WinGet","C:\Users","D:\Users"
 
 # Install App Installer https://apps.microsoft.com/store/detail/app-installer/9NBLGGH4NNS1?hl=en-us&gl=us
