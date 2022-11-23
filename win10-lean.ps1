@@ -5,6 +5,7 @@ Set-MpPreference -DisableBehaviorMonitoring $true
 fsutil behavior set disablelastaccess 1
 powercfg.exe /hibernate off
 Add-MpPreference -ExclusionPath "C:\Windows","C:\Program Files","C:\Program Files (x86)","D:\Program Files","D:\Program Files (x86)","%TEMP%\WinGet","C:\Users","D:\Users"
+Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope LocalMachine
 
 # Install App Installer https://apps.microsoft.com/store/detail/app-installer/9NBLGGH4NNS1?hl=en-us&gl=us
 
