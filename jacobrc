@@ -18,6 +18,7 @@ alias as=astro
 alias ag='apt-get'
 alias agud='apt-get update'
 alias agug='apt-get upgrade'
+alias aws-creds='env | g ^AWS_ | cut -c 1-45 | sed "s/$/.../"'
 alias base64='base64 -w0'
 alias bd='base64 -d'
 alias c='cat'
@@ -86,12 +87,14 @@ alias t='tail'
 alias tf='time terraform'
 alias tfa='time terraform apply | tee apply.out'
 alias tfaa='time terraform apply -auto-approve | tee apply.out'
+alias tfdaa='time terraform apply -destroy -auto-approve | tee apply.out'
 alias tfp='time terraform plan'
 alias tfs='terraform show tf.plan.out | egrep -i " resource|region|zone |name|plan:"'
 alias v='vim'
 alias vl='vault ' vtl='echo "vault token lookup"; vault token lookup | grep -v "^id" '
 alias wh='which'
 alias zles='zless'
+alias zsomething='asdf'
 
 gpush () { git commit -am "$1"; git push; }
 mcd () { mkdir -p $1; cd $1; }
