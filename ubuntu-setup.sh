@@ -33,7 +33,7 @@ sudo update-alternatives --set ip6tables /usr/sbin/ip6tables-legacy
 echo '#'
 echo '#'
 echo '#'
-echo '# YOU MUST REBOOT FOR THE DOCKER-CE IPTABLES CHANGE TO TAKE EFFECT!!!
+echo '# YOU MUST REBOOT FOR THE DOCKER-CE IPTABLES CHANGE TO TAKE EFFECT!!!'
 echo '#'
 echo '#'
 echo '#'
