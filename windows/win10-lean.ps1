@@ -4,12 +4,7 @@ Set-MpPreference -DisableRealtimeMonitoring $true
 Set-MpPreference -DisableBehaviorMonitoring $true
 fsutil behavior set disablelastaccess 1
 powercfg.exe /hibernate off
-Add-MpPreference -ExclusionPath "C:\Windows","C:\Program Files","C:\Program Files (x86)","D:\Program Files","D:\Program Files (x86)","%TEMP%\WinGet","C:\Users","D:\Users"
-Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope LocalMachine
-
-# Install App Installer https://apps.microsoft.com/store/detail/app-installer/9NBLGGH4NNS1?hl=en-us&gl=us
-
-# Apply Windows Updates manually:  Start > update
+Add-MpPreference -ExclusionPath "C:\Windows","C:\Program Files","C:\Program Files (x86)","D:\Program Files","D:\Program Files (x86)","%TEMP%\WinGet","C:\Users"
 
 # Enable unsigned powershell scripts: Start > developer settings
 
@@ -58,6 +53,7 @@ winget uninstall "Your Phone"
 
 
 # INSTALLS
+winget install -i "Microsoft.VisualStudioCode"
 winget install --exact "Bitwarden.Bitwarden"
 winget install --exact "mcmilk.7zip-zstd"
 winget install --exact "AltSnap.AltSnap"
@@ -77,18 +73,7 @@ winget install --exact "Ookla.Speedtest"
 winget install --exact "Eraser.Eraser"
 winget install --exact "TechPowerUp.GPU-Z"
 winget install --exact "TheDocumentFoundation.LibreOffice"
-winget install --exact "Microsoft.PowerToys"
 winget install --exact "Zoom.Zoom"
-winget install -i "Microsoft.VisualStudioCode"
 winget install "Microsoft.WindowsTerminal"
-# winget install ""
-# winget install ""
-# winget install ""
-# winget install ""
-# winget install ""
 
-
-# GAMING
-# winget install -i "Afterburner"
-# winget install "RTSS"
-# winget install "Valve.Steam"
+# iwr -useb https://git.io/debloat|iex
