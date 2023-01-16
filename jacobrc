@@ -100,7 +100,11 @@ alias zsomething='asdf'
 
 gpush () { git commit -am "$1"; git push; }
 mcd () { mkdir -p $1; cd $1; }
+
 pcert () { openssl x509 -in $1 -text -noout; }
+rcert () { openssl s_client -showcerts -connect $1:443 <<< ''; }
+rcertport () { openssl s_client -showcerts -connect $1 <<< ''; }
+
 pc () { tr -s ' ' | cut -d ' ' -f $1; }
 pch () { tr -s ' ' | cut -d ' ' -f $1 | tail -n +2; }
 complete -C kubectl kc
