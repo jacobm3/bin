@@ -1,12 +1,20 @@
 
 # Paste this section into an admin powershell terminal
+# Begin paste block
 Set-MpPreference -DisableRealtimeMonitoring $true
 Set-MpPreference -DisableBehaviorMonitoring $true
 fsutil behavior set disablelastaccess 1
 powercfg.exe /hibernate off
 Add-MpPreference -ExclusionPath "C:\Windows","C:\Program Files","C:\Program Files (x86)","D:\Program Files","D:\Program Files (x86)","%TEMP%\WinGet"
 
-# Enable unsigned powershell scripts: Start > developer settings
+# disable background apps
+Reg Add HKCU\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications /v GlobalUserDisabled /t REG_DWORD /d 1 /f
+
+# enable unsigned powershell scripts
+Set-ExecutionPolicy RemoteSigned -Scope LocalMachine -Force
+Set-ExecutionPolicy RemoteSigned -Scope LocalMachine -Force
+
+# End Paste Block
 
 # apply win10 updates
 
