@@ -84,6 +84,7 @@ winget install --exact "Eraser.Eraser"
 winget install --exact "TechPowerUp.GPU-Z"
 winget install --exact "TheDocumentFoundation.LibreOffice"
 winget install --exact "Zoom.Zoom"
+winget install --exact "MiniTool.PartitionWizard.Free"
 winget install "Microsoft.WindowsTerminal"
 
 # configure greenshot settings
