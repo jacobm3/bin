@@ -85,3 +85,4 @@ winget install "Microsoft.WindowsTerminal"
 
 # scheduled task to start altsnap w/admin privs
 # scheduled task to run c:\bin\cf-dns.ps1
+# make a system restore point
