@@ -91,6 +91,7 @@ winget install "Microsoft.WindowsTerminal"
 # https://pathcopycopy.github.io/
 # https://geeks3d.com/furmark/downloads/
 # disable background tasks
+# minitool shadowmaker free - https://www.minitool.com/backup/system-backup.html
 
 # scheduled task to start altsnap w/admin privs
 # scheduled task to run c:\bin\cf-dns.ps1
