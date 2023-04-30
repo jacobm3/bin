@@ -4,16 +4,18 @@ Set-MpPreference -DisableRealtimeMonitoring $true
 Set-MpPreference -DisableBehaviorMonitoring $true
 fsutil behavior set disablelastaccess 1
 powercfg.exe /hibernate off
-Add-MpPreference -ExclusionPath "C:\Windows","C:\Program Files","C:\Program Files (x86)","D:\Program Files","D:\Program Files (x86)","%TEMP%\WinGet","C:\Users"
+Add-MpPreference -ExclusionPath "C:\Windows","C:\Program Files","C:\Program Files (x86)","D:\Program Files","D:\Program Files (x86)","%TEMP%\WinGet"
 
 # Enable unsigned powershell scripts: Start > developer settings
+
+# apply win10 updates
 
 # Then execute this entire script (ok to rerun the top part)
 
 # Once that completes, run https://github.com/Sycnex/Windows10Debloater/blob/master/Windows10DebloaterGUI.ps1 to disable telemetry
 # and perform other debloat techniques
 # or:
-# iwr -useb https://git.io/debloat|iex
+iwr -useb https://git.io/debloat|iex
 
 # UNINSTALLS
 winget uninstall "3D Viewer"
@@ -64,7 +66,7 @@ winget install --exact "FastStone.Viewer"
 winget install --exact "GIMP.GIMP"
 winget install --exact "Git.Git"
 winget install --exact "Google.Chrome"
-winget install --exact "Greenshot.Greenshot"
+winget install --silent --exact "Greenshot.Greenshot"
 winget install --exact "Notepad++.Notepad++"
 winget install --exact "VideoLAN.VLC"
 winget install --exact "AntibodySoftware.WizTree"
@@ -76,4 +78,8 @@ winget install --exact "TheDocumentFoundation.LibreOffice"
 winget install --exact "Zoom.Zoom"
 winget install "Microsoft.WindowsTerminal"
 
-# iwr -useb https://git.io/debloat|iex
+# configure greenshot settings
+# https://pathcopycopy.github.io/
+# https://geeks3d.com/furmark/downloads/
+# disable background tasks
+
