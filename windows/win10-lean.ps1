@@ -83,3 +83,5 @@ winget install "Microsoft.WindowsTerminal"
 # https://geeks3d.com/furmark/downloads/
 # disable background tasks
 
+# scheduled task to start altsnap w/admin privs
+# scheduled task to run c:\bin\cf-dns.ps1
