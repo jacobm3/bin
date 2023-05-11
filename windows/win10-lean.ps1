@@ -29,6 +29,8 @@ iwr -useb https://git.io/debloat|iex
 Set-Service -Name MapsBroker -StartupType Disabled
 Set-Service -Name SharedAccess -StartupType Disabled
 Set-Service -Name LanmanServer -StartupType Disabled
+Set-Service -Name edgeupdate -StartupType Disabled
+Set-Service -Name edgeupdatem -StartupType Disabled
 
 
 # UNINSTALLS
