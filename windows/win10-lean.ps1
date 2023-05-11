@@ -25,6 +25,12 @@ Set-ExecutionPolicy RemoteSigned -Scope LocalMachine -Force
 # or:
 iwr -useb https://git.io/debloat|iex
 
+# Not needed by most individual end users
+Set-Service -Name MapsBroker -StartupType Disabled
+Set-Service -Name SharedAccess -StartupType Disabled
+Set-Service -Name LanmanServer -StartupType Disabled
+
+
 # UNINSTALLS
 winget uninstall "3D Viewer"
 winget uninstall "Cortana"
@@ -91,7 +97,6 @@ winget install "Microsoft.WindowsTerminal"
 # https://pathcopycopy.github.io/
 # https://geeks3d.com/furmark/downloads/
 # disable background tasks
-# minitool shadowmaker free - https://www.minitool.com/backup/system-backup.html
 
 # scheduled task to start altsnap w/admin privs
 # scheduled task to run c:\bin\cf-dns.ps1
