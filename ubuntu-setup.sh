@@ -1,5 +1,7 @@
 #!/bin/bash -x
 
+set -e
+
 export DEBIAN_FRONTEND=noninteractive
 
 # fix broken hardware crypto acceleration in virtualbox+wsl
