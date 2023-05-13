@@ -6,9 +6,11 @@ export DEBIAN_FRONTEND=noninteractive
 #sudo mkdir -p /etc/gcrypt
 #echo all | sudo tee /etc/gcrypt/hwf.deny
 
+sudo apt-get update
 sudo apt-get install -y nmap bzip2 netcat net-tools git htop sysstat iotop vim-nox python3-pip jq lm-sensors btop gpg curl wget lsb-release ca-certificates
 
 # add hashi stuff
+rm -f /usr/share/keyrings/hashicorp-archive-keyring.gpg /etc/apt/sources.list.d/hashicorp.list
 wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
 sudo apt update
@@ -20,6 +22,7 @@ sudo apt install terraform vault
 # Install Docker CE
 sudo apt-get remove docker docker-engine docker.io containerd runc
 sudo mkdir -p /etc/apt/keyrings
+rm -f /etc/apt/keyrings/docker.gpg /etc/apt/sources.list.d/docker.list
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
