@@ -22,7 +22,10 @@ sudo apt install terraform vault
 
 
 # Install Docker CE
+set +e
 sudo apt-get remove docker docker-engine docker.io containerd runc
+set -e
+
 sudo mkdir -p /etc/apt/keyrings
 sudo rm -f /etc/apt/keyrings/docker.gpg /etc/apt/sources.list.d/docker.list
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
