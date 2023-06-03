@@ -37,18 +37,9 @@ Just "yay -S xcape" and that little 2 liner will enable it.
   
 https://unsplash.com/
 
+## linux crystaldiskmark
+wget https://github.com/JonMagon/KDiskMark/releases/download/3.1.3/kdiskmark_3.1.3-ubuntu_amd64.deb 
+sudo dpkg -i kdiskmark_3.1.3-ubuntu_amd64.deb
+sudo apt-get -f install
   
-## bpytop
-  sudo apt-get update &&  sudo apt install python3-pip && pip3 install bpytop --upgrade
-
-## docker ce
-  ```
-  sudo apt-get install ca-certificates curl gnupg lsb-release
-  sudo mkdir -p /etc/apt/keyrings
-  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-  echo   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-  sudo apt-get update
-  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
-  sudo usermod -a -G docker ubuntu
-  sudo update-alternatives --set iptables /usr/sbin/iptables-legacy
-  ```
+  
