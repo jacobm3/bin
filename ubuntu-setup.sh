@@ -16,9 +16,9 @@ sudo rm -f /usr/share/keyrings/hashicorp-archive-keyring.gpg /etc/apt/sources.li
 wget -q -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
 sudo apt update
-sudo apt install terraform vault
+# sudo apt install terraform vault
 
-#sudo apt-get install -y nmap bzip2 netcat net-tools git htop sysstat iotop vim-nox python3-pip jq lm-sensors
+sudo apt-get install -y nmap bzip2 netcat net-tools git htop sysstat iotop vim-nox python3-pip jq lm-sensors terraform vault
 
 
 # Install Docker CE
@@ -49,7 +49,7 @@ sudo usermod -G docker -a ubuntu
 #sudo apt-get upgrade -y
 
 # Install Astronomer CLI
-curl -sSL install.astronomer.io | sudo bash -s
+# curl -sSL install.astronomer.io | sudo bash -s
 
 # Install k3s 
 #curl -sfL https://get.k3s.io | sh -
