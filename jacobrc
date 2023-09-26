@@ -87,11 +87,11 @@ alias sd='sudo bash'
 alias sl3='sqlite3'
 alias t='tail'
 alias tf='time terraform'
-alias tfa='time terraform apply | tee apply.out'
-alias tfaa='time terraform apply -auto-approve | tee apply.out'
-alias tfdaa='time terraform apply -destroy -auto-approve | tee apply.out'
+alias tfa='time terraform apply | tee .apply.out'
+alias tfaa='time terraform apply -auto-approve | tee .apply.out'
+alias tfdaa='time terraform apply -destroy -auto-approve | .tee apply.out'
 alias tfp='time terraform plan'
-alias tfs='terraform show tf.plan.out | egrep -i " resource|region|zone |name|plan:"'
+alias tfs='terraform show .tf.plan.out | egrep -i " resource|region|zone |name|plan:"'
 alias v='vim'
 alias vl='vault ' vtl='echo "vault token lookup"; vault token lookup | grep -v "^id" '
 alias wh='which'
@@ -113,7 +113,7 @@ complete -C terraform tf
 complete -C vault vault
 export JQ_COLORS='0;37:0;39:0;39:0;37:0;37:1;37:1;37'
 
-export TF_LOG_PATH=tf.log.debug TF_CLI_ARGS_plan="-out tf.plan.out" TF_LOG=debug
+export TF_LOG_PATH=.tf.log.debug TF_CLI_ARGS_plan="-out .tf.plan.out" TF_LOG=debug
 
 which kubectl >/dev/null && source <(kubectl completion bash) && complete -o default -F __start_kubectl k
 
