@@ -23,7 +23,7 @@ cat $tmpfile | while read -r LINE; do
   VM_ID=$(echo $LINE | awk '{print $1}')
   VM_NAME=$(echo $LINE | awk '{print $2}')
   echo VM_ID=$VM_ID VM_NAME=$VM_NAME
-  ssh ${USERNAME}@${PROXMOX_HOST} vzdump $VM_ID --mode snapshot --compress zstd --stdout </dev/null > vzdump_${VM_ID}_${VM_NAME}_backup.$(date +%Y.%m.%d-%H.%M.%S).vma.zst
+  ssh ${USERNAME}@${PROXMOX_HOST} vzdump $VM_ID --mode snapshot --compress zstd --stdout </dev/null > vzdump-qemu-${VM_ID}-${VM_NAME}_backup.$(date +%Y.%m.%d-%H.%M.%S).vma.zst
 
 done
 
