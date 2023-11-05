@@ -11,6 +11,7 @@ ls --color=auto &>/dev/null; if [ 0 -eq 0 ]; then alias ls='ls --color=auto' lh=
 export EDITOR=vim PAGER=less
 export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
 
+alias a1="awk '{print \$1}'" a2="awk '{print \$2}'" a12="awk '{print \$1,\$2}'"
 alias a='alias'
 alias ac='apt-cache'
 alias acs='apt-cache search'
