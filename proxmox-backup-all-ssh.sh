@@ -13,7 +13,7 @@ fi
 PROXMOX_HOST=$1
 USERNAME="root"
 
-tmpfile=/tmp/$$.asdf
+tmpfile=/tmp/proxmox-backup-all-ssh.sh.$$.tmp
 
 # SSH and run 'qm list' to get the list of VMs
 ssh ${USERNAME}@${PROXMOX_HOST} "qm list | awk '{print \$1,\$2}' | grep -v VMID" > $tmpfile
