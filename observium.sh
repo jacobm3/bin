@@ -14,3 +14,4 @@ sudo sed -i 's/^sysLocation .*/sysLocation Houston Office/' /etc/snmp/snmpd.conf
 sudo sed -i 's/^agentaddress .*/agentaddress 0.0.0.0/' /etc/snmp/snmpd.conf
 sudo sed -i 's/^rocommunity .*/rocommunity  public default/' /etc/snmp/snmpd.conf
 
+sudo /etc/init.d/snmpd restart
