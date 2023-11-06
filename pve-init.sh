@@ -12,10 +12,20 @@ rm /etc/apt/sources.list.d/*
 echo "deb http://download.proxmox.com/debian/pve bookworm pve-no-subscription" >> /etc/apt/sources.list
 
 apt-get update
-apt install -y git htop btop vim nmap netdiscover
+apt install -y git htop btop vim nmap netdiscover 7zip zip unzip 
 
 git clone https://github.com/jacobm3/gbin.git && echo ". ~/gbin/jacobrc" >> ~/.bashrc && echo ". ~/gbin/jacobrc" >> ~/.bash_profile && ln -s gbin/jacobrc .jacobrc
 
 apt-get upgrade -y
 
+cat >> /etc/network/interfaces <<EOF
+
+auto vmbr1
+iface vmbr1 inet static
+        address 10.0.1.254/24
+        bridge-ports none
+        bridge-stp off
+        bridge-fd 0
+
+EOF
 
