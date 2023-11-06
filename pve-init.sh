@@ -11,7 +11,7 @@ rm /etc/apt/sources.list.d/*
 echo "deb http://download.proxmox.com/debian/pve bookworm pve-no-subscription" >> /etc/apt/sources.list
 
 apt-get update
-apt install -y git htop btop vim nmap netdiscover 7zip zip unzip 
+apt install -y 7zip btop git htop lm-sensors netdiscover nmap vim zip unzip 
 
 git clone https://github.com/jacobm3/gbin.git && echo ". ~/gbin/jacobrc" >> ~/.bashrc && echo ". ~/gbin/jacobrc" >> ~/.bash_profile && ln -s gbin/jacobrc .jacobrc
 
