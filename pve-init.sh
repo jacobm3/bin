@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 
 # curl -sSL https://raw.githubusercontent.com/jacobm3/gbin/main/pve-init.sh | bash 
 
