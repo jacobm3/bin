@@ -6,6 +6,7 @@ cat > /root/.ssh/authorized_keys <<EOF
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID10aN8gGb0s+3LTE43VNFmvQxz5WYL+JlMCVzmZl+f7 jacob.martinson.ed25519.2022.09
 EOF
 
+zfs set compression=zstd-fast rpool
 
 rm /etc/apt/sources.list.d/*
 echo "deb http://download.proxmox.com/debian/pve bookworm pve-no-subscription" >> /etc/apt/sources.list
