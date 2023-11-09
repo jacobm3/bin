@@ -16,6 +16,14 @@ apt-get update
 apt-get upgrade -y
 apt install -y 7zip btop git htop lm-sensors net-tools netdiscover nmap sudo sysstat vim zip unzip 
 
+# setup snmpd 
+apt install -y snmpd snmp
+cp /etc/snmp/snmpd.conf /etc/snmp/snmpd.conf.dist
+sed -i 's/^sysLocation .*/sysLocation Houston Office/' /etc/snmp/snmpd.conf
+sed -i 's/^agentaddress .*/agentaddress 0.0.0.0/' /etc/snmp/snmpd.conf
+sed -i 's/^rocommunity .*/rocommunity  public default/' /etc/snmp/snmpd.conf
+/etc/init.d/snmpd restart
+
 git clone https://github.com/jacobm3/gbin.git && echo ". ~/gbin/jacobrc" >> ~/.bashrc && echo ". ~/gbin/jacobrc" >> ~/.bash_profile && ln -s gbin/jacobrc .jacobrc
 
 cat >> /etc/network/interfaces <<EOF
