@@ -8,7 +8,7 @@ sudo ./observium_installscript.sh
 
 
 # setup snmpd 
-sudo apt install -y snmpd
+sudo apt install -y snmpd snmp
 sudo cp /etc/snmp/snmpd.conf /etc/snmp/snmpd.conf.dist
 sudo sed -i 's/^sysLocation .*/sysLocation Houston Office/' /etc/snmp/snmpd.conf
 sudo sed -i 's/^agentaddress .*/agentaddress 0.0.0.0/' /etc/snmp/snmpd.conf
