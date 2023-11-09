@@ -11,12 +11,12 @@ zfs set compression=zstd-fast rpool
 rm /etc/apt/sources.list.d/*
 echo "deb http://download.proxmox.com/debian/pve bookworm pve-no-subscription" >> /etc/apt/sources.list
 
+export DEBIAN_FRONTEND=noninteractive
 apt-get update
+apt-get upgrade -y
 apt install -y 7zip btop git htop lm-sensors net-tools netdiscover nmap sudo sysstat vim zip unzip 
 
 git clone https://github.com/jacobm3/gbin.git && echo ". ~/gbin/jacobrc" >> ~/.bashrc && echo ". ~/gbin/jacobrc" >> ~/.bash_profile && ln -s gbin/jacobrc .jacobrc
-
-apt-get upgrade -y
 
 cat >> /etc/network/interfaces <<EOF
 
