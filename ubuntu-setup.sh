@@ -18,8 +18,6 @@ sudo apt-get install -y nmap bzip2 netcat net-tools git htop sysstat iotop vim-n
 # sudo apt update
 # sudo apt install terraform vault
 
-sudo apt-get install -y nmap bzip2 netcat net-tools git htop sysstat iotop vim-nox python3-pip jq lm-sensors 
-
 
 # Install Docker CE
 set +e
