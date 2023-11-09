@@ -9,7 +9,7 @@ export DEBIAN_FRONTEND=noninteractive
 #echo all | sudo tee /etc/gcrypt/hwf.deny
 
 sudo apt-get update
-sudo apt-get install -y nmap bzip2 netcat net-tools git htop sysstat iotop vim-nox python3-pip jq lm-sensors btop gpg curl wget lsb-release ca-certificates
+sudo apt-get install -y nmap bzip2 ncat net-tools git htop sysstat iotop vim-nox python3-pip jq lm-sensors btop gpg curl wget lsb-release ca-certificates
 
 # add hashi stuff
 # sudo rm -f /usr/share/keyrings/hashicorp-archive-keyring.gpg /etc/apt/sources.list.d/hashicorp.list
