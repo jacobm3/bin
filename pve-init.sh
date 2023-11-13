@@ -20,10 +20,11 @@ apt install -y 7zip btop git htop lm-sensors net-tools netdiscover nmap sudo sys
 # setup snmpd 
 apt install -y snmpd snmp
 cp /etc/snmp/snmpd.conf /etc/snmp/snmpd.conf.dist
-sed -i 's/^sysLocation .*/sysLocation Houston Office/' /etc/snmp/snmpd.conf
+sed -i "s/^sysLocation .*/sysLocation $HOSTNAME Houston Office/" /etc/snmp/snmpd.conf
 sed -i 's/^agentaddress .*/agentaddress 0.0.0.0/' /etc/snmp/snmpd.conf
 sed -i 's/^rocommunity .*/rocommunity  public default/' /etc/snmp/snmpd.conf
 /etc/init.d/snmpd restart
+# snmpwalk -v 2c -c public localhost
 
 git clone https://github.com/jacobm3/gbin.git && echo ". ~/gbin/jacobrc" >> ~/.bashrc && echo ". ~/gbin/jacobrc" >> ~/.bash_profile && ln -s gbin/jacobrc .jacobrc
 
