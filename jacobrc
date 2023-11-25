@@ -98,6 +98,7 @@ alias tfs='terraform show .tf.plan.out | egrep -i " resource|region|zone |name|p
 alias v='vim'
 alias vl='vault ' vtl='echo "vault token lookup"; vault token lookup | grep -v "^id" '
 alias wh='which'
+alias x='xdg-open'
 alias zles='zless'
 alias zsomething='asdf'
 
