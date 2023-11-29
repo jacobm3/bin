@@ -44,3 +44,4 @@ systemctl restart pveproxy.service
 
 # from working pve node:
 # cd /etc/postfix && scp main.cf sasl_passwd* smtp_header_checks* NEWIP:/etc/postfix
+# update hostname in /etc/postfix/main.cf and smtp_header_checks
