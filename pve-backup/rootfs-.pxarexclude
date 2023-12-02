@@ -1,0 +1,5 @@
+*
+!/etc
+!/etc/**
+!/usr/local
+!/usr/local/**
