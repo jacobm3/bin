@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# curl -sSL https://raw.githubusercontent.com/jacobm3/gbin/main/live-setup.sh | bash
+# apt install -y curl && curl -sSL https://raw.githubusercontent.com/jacobm3/gbin/main/live-setup.sh | bash
 #
 # setup live linux environment with common tools
 
