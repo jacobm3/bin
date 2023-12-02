@@ -27,6 +27,7 @@ sed -i 's/^rocommunity .*/rocommunity  public default/' /etc/snmp/snmpd.conf
 # snmpwalk -v 2c -c public localhost
 
 git clone https://github.com/jacobm3/gbin.git && echo ". ~/gbin/jacobrc" >> ~/.bashrc && echo ". ~/gbin/jacobrc" >> ~/.bash_profile && ln -s gbin/jacobrc .jacobrc
+cp ~/gbin/.config/htop/htoprc ~/.config/htop/htoprc
 
 cat >> /etc/network/interfaces <<EOF
 
