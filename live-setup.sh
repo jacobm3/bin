@@ -14,7 +14,7 @@ sudo apt-get update
 sudo apt-get upgrade -y
 sudo apt install -y 7zip btop git htop btop lm-sensors net-tools netdiscover nmap sudo sysstat vim zip unzip zstd \
   zlib1g-dev libjpeg-dev python3-pip \
-  nvme-cli smartmontools zfsutils-linux rsync unison-gtk unison nwipe
+  nvme-cli smartmontools zfsutils-linux rsync unison-gtk unison nwipe cloud-guest-utils
 
 # https://github.com/louwrentius/fio-plot
 pip3 install fio-plot 
