@@ -121,5 +121,7 @@ export TF_LOG_PATH=.tf.log.debug TF_CLI_ARGS_plan="-out .tf.plan.out" TF_LOG=deb
 
 which kubectl >/dev/null && source <(kubectl completion bash) && complete -o default -F __start_kubectl k
 
+if [ -e /usr/share/bash-completion/completions/zfs ]; then . /usr/share/bash-completion/completions/zfs; fi
+
 if [ -e ~/.bashrc.local ]; then . ~/.bashrc.local; fi
 if [ -e ~/.jacobrc.local ]; then . ~/.jacobrc.local; fi
