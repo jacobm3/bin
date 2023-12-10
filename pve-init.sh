@@ -15,6 +15,7 @@ echo "deb http://download.proxmox.com/debian/pve bookworm pve-no-subscription" >
 export DEBIAN_FRONTEND=noninteractive
 apt-get update
 apt-get upgrade -y
+apt-get dist-upgrade -y
 apt install -y 7zip btop git htop hwinfo lm-sensors net-tools netdiscover nmap nvme-cli sudo sysstat vim zip unzip libsasl2-modules mailutils postfix-pcre
 
 # setup snmpd 
