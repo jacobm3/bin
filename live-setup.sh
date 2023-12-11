@@ -14,31 +14,7 @@ EOF
 export DEBIAN_FRONTEND=noninteractive
 sudo apt-get update
 sudo apt-get upgrade -y
-sudo apt install -y \
-  7zip \
-  btop cloud-guest-utils \
-  curl \
-  git \
-  htop \
-  hwinfo \
-  lm-sensors \
-  net-tools \
-  netdiscover \
-  nmap \
-  nvme-cli \
-  nwipe \
-  python3-pip \
-  rsync \
-  smartmontools \
-  sudo \
-  sysstat \
-  unison \
-  unzip \
-  vim-nox \
-  zfsutils-linux \
-  zip \
-  zlib1g-dev \
-  zstd 
+sudo apt install -y 7zip btop cloud-guest-utils curl git htop hwinfo lm-sensors net-tools netdiscover nmap nvme-cli nwipe python3-pip rsync smartmontools sudo sysstat unison unzip vim-nox zfsutils-linux zip zlib1g-dev zstd 
 
 # https://github.com/louwrentius/fio-plot
 #pip3 install fio-plot 
