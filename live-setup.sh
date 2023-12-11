@@ -16,8 +16,7 @@ sudo apt-get update
 sudo apt-get upgrade -y
 sudo apt install -y \
   7zip \
-  btop \
-  cloud-guest-utils \
+  btop cloud-guest-utils \
   curl \
   git \
   htop \
