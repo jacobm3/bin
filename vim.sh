@@ -26,15 +26,15 @@ hi StatusLineNC term=bold                   cterm=bold
 hi VertSplit        term=bold                   cterm=bold
 hi Visual                   term=bold                   cterm=reverse
 hi VisualNOS        term=underline,bold cterm=underline,bold
-hi DiffText         term=reverse cterm=bold ctermbg=grey
+hi DiffText         term=reverse cterm=bold ctermbg=black
 hi Directory        term=bold ctermfg=yellow
-hi LineNr                   term=underline ctermfg=darkgrey
+hi LineNr                   term=underline ctermfg=black
 hi Question         term=standout ctermfg=LightGreen
 hi Search                   term=reverse ctermbg=Yellow ctermfg=Black
 hi WarningMsg   term=standout ctermfg=grey
 hi WildMenu                 term=standout ctermbg=Yellow ctermfg=Black
-hi Folded                   term=standout ctermbg=LightGrey ctermfg=grey
-hi FoldColumn   term=standout ctermbg=LightGrey ctermfg=grey
+hi Folded                   term=standout ctermbg=black ctermfg=grey
+hi FoldColumn   term=standout ctermbg=black ctermfg=grey
 hi Comment           ctermfg=246
 hi String            ctermfg=081
 hi Statement         ctermfg=119
