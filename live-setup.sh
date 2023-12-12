@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 
-# export DEBIAN_FRONTEND=noninteractive apt-get update && apt install -y curl git sudo
+# export DEBIAN_FRONTEND=noninteractive; apt-get update && apt install -y curl git sudo
 # echo '%sudo ALL=(ALL) NOPASSWD: ALL' | sudo tee -a /etc/sudoers
 # curl -sSL https://raw.githubusercontent.com/jacobm3/gbin/main/live-setup.sh | bash
 #
