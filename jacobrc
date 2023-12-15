@@ -43,7 +43,7 @@ alias dkrmall="echo; echo Removing any containers.
                docker network prune -f; echo"
 alias dsh='du -sh'
 alias dsk='du -sk'
-dn () { du -sk "$1" | sort -n }
+dn () { du -sk "$1" | sort -n; }
 
 
 alias egrep='egrep --color=auto'
