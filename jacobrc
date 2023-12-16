@@ -33,6 +33,7 @@ alias cpuinfo='egrep "model name|cores" /proc/cpuinfo|head -2; grep MHz /proc/cp
 alias cx='chmod +x'
 alias d='docker' 
 alias dc='docker-compose' dcr='docker-compose restart'
+alias dfh='df -h'
 alias dt='docker exec -it' ds='docker stats'
 
 alias dkrmall="echo; echo Removing any containers.
