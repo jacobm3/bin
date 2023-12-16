@@ -23,7 +23,6 @@ sudo apt install -y 7zip bash-completion btop cloud-guest-utils curl git htop hw
 #pip3 install fio-plot 
 
 git clone https://github.com/jacobm3/gbin.git && echo ". ~/gbin/jacobrc" >> ~/.bashrc && echo ". ~/gbin/jacobrc" >> ~/.bash_profile && ln -s gbin/jacobrc .jacobrc
-echo ". ~/gbin/complete_alias" >> ~/.bash_completion
 
 mkdir -p ~/.config/htop
 cp ~/gbin/.config/htop/htoprc ~/.config/htop/htoprc
