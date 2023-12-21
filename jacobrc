@@ -51,6 +51,7 @@ alias egrep='egrep --color=auto'
 alias em="sed 's/,/\n/g' | sed 's/^ //'; echo 'Jacob Martinson <jacob.martinson@astronomer.io>'"
 alias f='fg'
 alias fgrep='fgrep --color=auto'
+alias fp='flatpak'
 alias g='egrep'
 alias ga='git add'
 alias gc='git commit'
