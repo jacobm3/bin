@@ -113,14 +113,31 @@ alias zles='zless'
 alias zsomething='asdf'
 
 gpush () { git commit -am "$1"; git push; }
+
 mcd () { mkdir -p $1; cd $1; }
 
+# print details of local certificate in a file
 pcert () { openssl x509 -in $1 -text -noout; }
+
+# print details of a remote certificate at hostname/IP addr
 rcert () { openssl s_client -showcerts -connect $1:443 <<< ''; }
+
+# print details of a remote certificate at hostname/IP addr:port
 rcertport () { openssl s_client -showcerts -connect $1 <<< ''; }
 
+# print just column N, passed in as the 1st and only argument
+# similar to awk "{print $1}" but easier to type
 pc () { tr -s ' ' | cut -d ' ' -f $1; }
-pch () { tr -s ' ' | cut -d ' ' -f $1 | tail -n +2; }
+
+# convert gigabytes to bytes
+gb2b () {
+    local gb=$1
+    local bytes=$(echo "$gb * 1024 * 1024 * 1024" | bc)
+    echo ${bytes%.*}
+}
+
+
+
 complete -C kubectl kc
 complete -C docker d
 complete -C terraform tf
