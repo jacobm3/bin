@@ -28,7 +28,7 @@ hi Visual                   term=bold                   cterm=reverse
 hi VisualNOS        term=underline,bold cterm=underline,bold
 hi DiffText         term=reverse cterm=bold ctermbg=black
 hi Directory        term=bold ctermfg=yellow
-hi LineNr                   term=underline ctermfg=black
+hi LineNr                   term=underline ctermfg=darkgrey
 hi Question         term=standout ctermfg=LightGreen
 hi Search                   term=reverse ctermbg=Yellow ctermfg=Black
 hi WarningMsg   term=standout ctermfg=grey
