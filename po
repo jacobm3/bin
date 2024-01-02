@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# Send a message to pushover service
+# Supports multi-line messages!
+
+# source pushover secrets from external file
+# po_apptoken, po_userkey
+CREDS=~/.pushover.shell
+
+if [ ! -r "$CREDS" ]; then
+  echo "File $CREDS does not exist or is not readable."
+  exit 1
+fi
+
+. $CREDS
+
+if [ -z "${po_apptoken}" ]; then
+  echo "\$po_apptoken missing from $CREDS"
+  exit 1
+fi
+
+if [ -z "${po_userkey}" ]; then
+  echo "\$po_userkey missing from $CREDS"
+  exit 1
+fi
+
+
+# Read multi-line input from STDIN and assign it to msg
+msg=$(cat)
+
+curl -s \
+--form-string "token=${po_apptoken}" \
+--form-string "user=${po_userkey}" \
+--form-string "message=$msg" \
+https://api.pushover.net/1/messages.json
+
