@@ -1,0 +1,76 @@
+#!/bin/bash
+#
+# Send a message to pushover service, with notification frequency controls
+# so you can use this code in high frequency monitoring checks without
+# spamming your pushover inbox once a problem condition is detected.
+#
+# Similar to Nagios notification_interval, but without Nagios overhead.
+#
+# Supports multi-line messages!
+
+# source pushover secrets from external file
+# po_apptoken, po_userkey
+CREDS=~/.pushover.shell
+
+# Notification control file
+NOTIFY_FILE=~/.pushover.notif.control01
+
+NOTIFY_INTERVAL_SECONDS=$[ 20 * 60 ]
+
+if [ ! -z "$1" ] && [ "$1" -gt 0 ]; then
+  NOTIFY_INTERVAL_SECONDS=$1
+fi
+
+if [ ! -r "$CREDS" ]; then
+  echo "File $CREDS does not exist or is not readable."
+  exit 1
+fi
+
+. $CREDS
+
+if [ -z "${po_apptoken}" ]; then
+  echo "\$po_apptoken missing from $CREDS"
+  exit 1
+fi
+
+if [ -z "${po_userkey}" ]; then
+  echo "\$po_userkey missing from $CREDS"
+  exit 1
+fi
+
+# Function to check if 20 minutes have passed
+function should_notify {
+    if [ ! -f "$NOTIFY_FILE" ]; then
+        # If file doesn't exist, it's okay to notify
+        return 0
+    fi
+
+    # Calculate time difference
+    last_notify_time=$(stat -c %Y "$NOTIFY_FILE")
+    current_time=$(date +%s)
+    time_diff=$((current_time - last_notify_time))
+
+    if [ $time_diff -ge $NOTIFY_INTERVAL_SECONDS ]; then
+        return 0
+    else
+        return 1
+    fi
+}
+
+
+# Read multi-line input from STDIN and assign it to msg
+msg=$(cat)
+
+if should_notify; then
+
+    curl -s \
+        --form-string "token=${po_apptoken}" \
+        --form-string "user=${po_userkey}" \
+        --form-string "message=$msg" \
+        https://api.pushover.net/1/messages.json
+
+    # Update the notify control file's timestamp
+    touch "$NOTIFY_FILE"
+fi
+
+
