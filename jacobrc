@@ -153,6 +153,11 @@ which kubectl >/dev/null && source <(kubectl completion bash) && complete -o def
 
 if [ -e /usr/share/bash-completion/completions/zfs ]; then . /usr/share/bash-completion/completions/zfs; fi
 
+venv_path=.venv-default/bin/activate
+if [ -r "$venv_path" ]; then
+  . .venv-default/bin/activate
+fi
+
 . ~/gbin/complete_alias
 
 if [ -e ~/.bashrc.local ]; then . ~/.bashrc.local; fi
