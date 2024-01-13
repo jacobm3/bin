@@ -1,4 +1,4 @@
-vers="231227 `lsb_release -a 2>/dev/null | grep Release | awk '{print $2}'`"
+vers="240112 `lsb_release -a 2>/dev/null | grep Release | awk '{print $2}'`"
 shopt -s extglob
 export HISTCONTROL=ignoreboth HISTSIZE=10000 HISTTIMEFORMAT='%F %T ' HISTIGNORE='*AWS_SECRET=:*AWS_SESSION=:*vault token*:*VAULT_TOKEN='
 export PATH=$PATH:$HOME/gbin:$HOME/bin:$HOME/.local/bin:$HOME/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin/X11:/usr/X/bin:/var/lib/flatpak/exports/bin
