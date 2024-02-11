@@ -2,7 +2,14 @@
 ```
 net user NewUser Password123 /add
 net localgroup Administrators NewUser /add
+gpupdate /force
 
+```
+
+# diable OOBE dialog
+```
+New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\OOBE" -Name "DisablePrivacyExperience" -Value 1 -PropertyType DWORD -Force
+gpupdate /force
 ```
 
 
