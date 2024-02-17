@@ -162,6 +162,10 @@ if [ -r "$venv_path" ]; then
   . .venv-default/bin/activate
 fi
 
+# custom tailscale completion
+. complete_tailscale
+
+# enable completion on aliases
 . ~/gbin/complete_alias
 
 if [ -e ~/.bashrc.local ]; then . ~/.bashrc.local; fi
