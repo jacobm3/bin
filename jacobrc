@@ -114,6 +114,7 @@ alias v='vim'
 alias vl='vault ' vtl='echo "vault token lookup"; vault token lookup | grep -v "^id" '
 alias wh='which'
 alias x='xdg-open'
+alias yt='yt-dlp'
 alias zles='zless'
 alias zsomething='asdf'
 
@@ -156,11 +157,9 @@ which kubectl >/dev/null && source <(kubectl completion bash) && complete -o def
 if [ -e /usr/share/bash-completion/completions/zfs ]; then . /usr/share/bash-completion/completions/zfs; fi
 
 # activate default python venv if present
-export VIRTUAL_ENV_DISABLE_PROMPT=1
-venv_path=.venv-default/bin/activate
-if [ -r "$venv_path" ]; then
-  . .venv-default/bin/activate
-fi
+#export VIRTUAL_ENV_DISABLE_PROMPT=1
+#venv_path=.venv-default/bin/activate
+#if [ -r "$venv_path" ]; then . .venv-default/bin/activate; fi
 
 # custom tailscale completion
 . complete_tailscale
