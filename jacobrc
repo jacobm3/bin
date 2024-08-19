@@ -32,6 +32,7 @@ alias btop='btop --utf-force'
 alias c='cat'
 alias cdi='cd /etc/init.d'
 alias clear-aws='unset AWS_DEFAULT_REGION AWS_SECRET_ACCESS_KEY AWS_ACCESS_KEY_ID'
+alias cls='clear'
 alias condense="grep -v '^\s*$' | grep -v '^#'"
 alias cpuinfo='egrep "model name|cores" /proc/cpuinfo|head -2; grep MHz /proc/cpuinfo | head -1'
 alias cx='chmod +x'
