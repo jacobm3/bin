@@ -2,6 +2,7 @@
 
 echo 'CHROMIUM_FLAGS="--disable-gpu"' >> ~/.chromium-browser.init
 
+mkdir -p  ~/.config/htop
 cp htoprc.laptop ~/.config/htop/htoprc
 
 ASD=~/.config/autostart
@@ -24,3 +25,5 @@ Type=Application
 Exec=ksnip
 Name=ksnip
 EOF
+
+sudo apt install ksnip redshift

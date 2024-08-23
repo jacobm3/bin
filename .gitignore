@@ -61,5 +61,4 @@ override.tf.json
 # example: *tfplan*
 #
 
-*.tgz
 ce-login
