@@ -51,6 +51,9 @@ alias dsh='du -sh'
 alias dsk='du -sk'
 dn () { du -sk "$1" | sort -n; }
 
+alias d8601='date +%Y-%m-%dT%H:%M:%S%z'
+d8601='date +%Y-%m-%dT%H:%M:%S%z'
+
 
 alias egrep='egrep --color=auto'
 alias em="sed 's/,/\n/g' | sed 's/^ //'; echo 'Jacob Martinson <jacob.martinson@astronomer.io>'"
