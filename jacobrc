@@ -12,6 +12,10 @@ ls --color=auto &>/dev/null; if [ 0 -eq 0 ]; then alias ls='ls --color=auto' lh=
 export EDITOR=vim PAGER=less
 export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
 
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias -- -='cd -'
 alias a1="awk '{print \$1}'" a2="awk '{print \$2}'" a12="awk '{print \$1,\$2}'"
 alias a='alias'
 alias ac='apt-cache'
@@ -52,7 +56,7 @@ alias dsk='du -sk'
 dn () { du -sk "$1" | sort -n; }
 
 alias d8601='date +%Y-%m-%dT%H:%M:%S%z'
-d8601='date +%Y-%m-%dT%H:%M:%S%z'
+ds='date +%Y-%m-%dT%H%M%S%z'
 
 
 alias egrep='egrep --color=auto'
@@ -115,6 +119,10 @@ alias tfp='time terraform plan'
 alias tfs='terraform show .tf.plan.out | egrep -i " resource|region|zone |name|plan:"'
 alias ts='tailscale'
 alias v='vim'
+alias venv='python3 -m venv '
+va () { . $1/bin/activate; }
+
+
 alias vl='vault ' vtl='echo "vault token lookup"; vault token lookup | grep -v "^id" '
 alias wh='which'
 alias x='xdg-open'
@@ -145,6 +153,7 @@ gb2b () {
     local bytes=$(echo "$gb * 1024 * 1024 * 1024" | bc)
     echo ${bytes%.*}
 }
+
 
 
 
