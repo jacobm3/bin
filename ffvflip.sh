@@ -1,34 +1,25 @@
 #!/bin/bash
 
-# Check if an argument was provided
-if [ "$#" -eq 0 ]; then
-    echo "Usage: $0 <input-file> [codec] [bitrate]"
-    echo "This script vertically flips the video file and appends '-vflip' to the output filename."
+# Check if the filename is provided
+if [ -z "$1" ]; then
+    echo "Usage: $0 filename"
     exit 1
 fi
 
-if [ ! -r "$1" ]; then
-    echo "Error: Input file '$1' is not readable or does not exist."
-    exit 1
-fi
+# Input filename
+input_file="$1"
 
-if [ -z "$2" ]; then
-    CODEC="vp9"
-else
-    CODEC="$2"
-fi
+# Extract the base name (remove extension) from the input filename
+base_name="${input_file%.*}"
 
-if [ -z "$3" ]; then
-    BITRATE="1500k"
-else
-    BITRATE="$3"
-fi
+# Get the current date and time in the desired format
+timestamp=$(date +"%Y%m%d.%H%M%S")
 
-# Extract the filename without the extension
-filename=$(basename -- "$1")
-extension="${filename##*.}"
-filename="${filename%.*}"
+# Construct the output filename
+output_file="${base_name}.out.${timestamp}.mp4"
 
-# vertically flip the video and save it with 'vflip' and codec info appended before the extension
-time ffmpeg -i "$1" -vf "vflip" -c:v $CODEC -b:v $BITRATE -c:a copy "${filename}-vflip-${CODEC}-${BITRATE}.${extension}"
+# Run the ffmpeg command to flip the video upside down
+ffmpeg -i "$input_file" -vf "vflip" -c:a copy "$output_file"
+
+echo "Output saved to $output_file"
 

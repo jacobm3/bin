@@ -15,6 +15,8 @@ EOF
 sudo chmod +x $ZRE
 #bash ${ZRE}
 
+exit
+
 sudo tee /etc/systemd/system/zram.service <<EOF
 [Service]
 Type=oneshot

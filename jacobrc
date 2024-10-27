@@ -26,6 +26,7 @@ alias ag='apt-get'
 alias agud='sudo apt-get update'
 alias agug='sudo apt-get update && sudo apt-get upgrade'
 alias aws-creds='env | g ^AWS_ | cut -c 1-45 | sed "s/$/.../"'
+alias b2=backblaze-b2
 alias base64='base64 -w0'
 alias bd='base64 -d'
 alias btop='btop --utf-force'
