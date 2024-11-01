@@ -16,10 +16,10 @@ base_name="${input_file%.*}"
 timestamp=$(date +"%Y%m%d.%H%M%S")
 
 # Construct the output filename
-output_file="${base_name}.vflip.${timestamp}.mp4"
+output_file="${base_name}.270.${timestamp}.mp4"
 
 # Run the ffmpeg command to flip the video upside down
-ffmpeg -i "$input_file" -vf "vflip" -c:a copy "$output_file"
+ffmpeg -i "$input_file" -vf "transpose=3" -c:a copy -c:v libx264 "$output_file"
 
 echo "Output saved to $output_file"
 
