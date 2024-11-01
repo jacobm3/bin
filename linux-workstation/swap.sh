@@ -6,6 +6,8 @@ set -x
 
 ZRE=/usr/local/bin/zram-enable.sh
 sudo tee $ZRE <<EOF
+#!/bin/bash
+#
 # swap on zram
 sudo modprobe zram
 sudo zramctl /dev/zram0 --algorithm lzo --size 4GB
