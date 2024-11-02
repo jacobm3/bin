@@ -8,7 +8,7 @@ PUSHOVER_USER=$ZED_PUSHOVER_USER
 PUSHOVER_TOKEN=$ZED_PUSHOVER_TOKEN
 
 # Define the temperature threshold
-TEMP_THRESHOLD=46
+TEMP_THRESHOLD=48
 
 # Check each drive's temperature
 for drive in /dev/sd?; do
