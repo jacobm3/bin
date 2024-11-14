@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo 'CHROMIUM_FLAGS="--disable-gpu"' >> ~/.chromium-browser.init
+#echo 'CHROMIUM_FLAGS="--disable-gpu"' >> ~/.chromium-browser.init
 
 mkdir -p  ~/.config/htop
 cp htoprc.laptop ~/.config/htop/htoprc
