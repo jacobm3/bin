@@ -17,6 +17,7 @@ pciutils \
 pwgen \
 rclone \
 restic \
+smartmontools \
 unzip \
 vim \
 wget \
