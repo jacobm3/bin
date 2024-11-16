@@ -105,6 +105,7 @@ alias ls='ls --color=auto'
 alias lsa='ls -a'
 alias ltr='ls -ltr'
 alias ltt='ls -ltr | tail'
+alias m='COLUMNS=100 man'
 alias md='mkdir'
 alias p=ping
 alias p1='ping 1.1.1.1'
