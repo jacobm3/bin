@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Check if xkcdpass and shuf are available
+if ! command -v xkcdpass &> /dev/null; then
+  echo "Error: xkcdpass not found. Please install it (e.g., 'sudo apt install xkcdpass')."
+  exit 1
+fi
+
+if ! command -v shuf &> /dev/null; then
+  echo "Error: shuf not found.  It should be part of coreutils."
+  exit 1
+fi
+
+
+# Generate the password
+echo "$(xkcdpass -n 3) $(shuf -i 100-999 -n 1)" 
