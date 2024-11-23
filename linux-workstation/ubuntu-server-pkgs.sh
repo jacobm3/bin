@@ -4,6 +4,7 @@ apt-get install \
 7zip \
 apt-transport-https \
 btop \
+bzip2 \
 curl \
 fio \
 htop \
