@@ -136,6 +136,7 @@ alias vl='vault ' vtl='echo "vault token lookup"; vault token lookup | grep -v "
 alias wh='which'
 alias x='xdg-open'
 alias yt='yt-dlp'
+alias zkeys='zfs get keystatus  -t filesystem; echo; zfs get keystatus  -t volume'
 alias zles='zless'
 alias zsomething='asdf'
 
