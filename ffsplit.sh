@@ -39,7 +39,7 @@ extension="${input_file##*.}"
 output_file="${filename}.zclip-${start_time//:/_}.${end_time//:/_}.${extension}"
 
 # Run ffmpeg command
-ffmpeg -i "$input_file" -ss "$start_time" -to "$end_time" -c copy "$output_file"
+time ffmpeg -i "$input_file" -ss "$start_time" -to "$end_time" -c copy "$output_file"
 
 echo
 echo ffmpeg -i "$input_file" -ss "$start_time" -to "$end_time" -c copy "$output_file"
