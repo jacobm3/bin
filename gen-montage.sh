@@ -21,8 +21,8 @@ FPS="$(awk -v dur="$DURATION" -v sam="$SAMPLES" 'BEGIN { if (dur > 0) print sam 
 
 # 5) Construct intermediate and final output filenames
 BASENAME="${VIDEO%.*}"
-THUMBS_DIR="tmp-thumbs"        # Temporary directory to store individual frames
-FINAL_IMAGE="${BASENAME}.test.jpg"  # Final tiled image
+THUMBS_DIR=".tmp-thumbs.$$"        # Temporary directory to store individual frames
+FINAL_IMAGE="${BASENAME}.montage.jpg"  # Final tiled image
 
 # Clean up (optional) and recreate tmp-thumbs directory
 rm -rf "$THUMBS_DIR"
@@ -33,7 +33,7 @@ mkdir -p "$THUMBS_DIR"
 ##########################################################################
 echo "==> Extracting frames with timestamps..."
 
-ffmpeg -hide_banner -loglevel warning -y \
+time ffmpeg -hide_banner -loglevel warning -y \
   -i "$VIDEO" \
   -vf "fps=${FPS},
        scale=320:-1:force_original_aspect_ratio=decrease,
@@ -50,7 +50,7 @@ echo "==> Creating tiled montage (8x7) from frames..."
 # -----------------------------------------------
 # The glob pattern must match the extracted frames. 
 # tile=8x7 => 8 columns, 7 rows, total 56 cells
-ffmpeg -hide_banner -loglevel warning -y \
+time ffmpeg -hide_banner -loglevel warning -y \
   -pattern_type glob \
   -i "${THUMBS_DIR}/frame_*.jpg" \
   -vf "tile=8x7" \
@@ -62,5 +62,6 @@ ffmpeg -hide_banner -loglevel warning -y \
 # -----------------------------------------------
 # montage "${THUMBS_DIR}/frame_*.jpg" -tile 8x7 -geometry +2+2 "$FINAL_IMAGE"
 
+rm -fr $THUMBS_DIR
 echo "==> Done. Created tiled thumbnails: $FINAL_IMAGE"
 
