@@ -126,6 +126,7 @@ alias tfaa='time terraform apply -auto-approve | tee .apply.out'
 alias tfdaa='time terraform apply -destroy -auto-approve | tee apply.out'
 alias tfp='time terraform plan'
 alias tfs='terraform show .tf.plan.out | egrep -i " resource|region|zone |name|plan:"'
+alias tm=tmsu
 alias ts='tailscale'
 alias v='vim'
 alias venv='python3 -m venv '
