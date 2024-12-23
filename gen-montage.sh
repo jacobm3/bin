@@ -22,7 +22,7 @@ FPS="$(awk -v dur="$DURATION" -v sam="$SAMPLES" 'BEGIN { if (dur > 0) print sam 
 # 5) Construct intermediate and final output filenames
 BASENAME="${VIDEO%.*}"
 THUMBS_DIR=".tmp-thumbs.$$"        # Temporary directory to store individual frames
-FINAL_IMAGE="${BASENAME}.montage.jpg"  # Final tiled image
+FINAL_IMAGE="${BASENAME}.a.jpg"  # Final tiled image
 
 # Clean up (optional) and recreate tmp-thumbs directory
 rm -rf "$THUMBS_DIR"
