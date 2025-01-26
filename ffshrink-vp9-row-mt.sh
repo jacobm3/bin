@@ -18,7 +18,7 @@ usage() {
     echo "  percentage (optional): Desired output file size as a percentage" | lolcat
     echo "    of the original file size. Defaults to 50." | lolcat
     echo "Example: $0 video.mp4 40" | lolcat
-    echo "  This would produce an output approximately 40% of the original size." | lolcat
+    echo "  This would produce an output approx. 40% of the original size." | lolcat
     exit 1
 }
 
@@ -59,7 +59,14 @@ ORIGINAL_BITRATE=$(ffprobe -v error \
     -show_entries stream=bit_rate \
     -of default=noprint_wrappers=1:nokey=1 "$INPUT")
 
-# If stream bitrate is not available, estimate it by filesize / duration
+# ---- NEW LOGIC START ----
+# If ffprobe returned "N/A", treat it as empty so fallback method is triggered
+if [ "$ORIGINAL_BITRATE" == "N/A" ]; then
+    ORIGINAL_BITRATE=""
+fi
+# ---- NEW LOGIC END ----
+
+# If stream bitrate is not available (empty or "N/A"), estimate by filesize / duration
 if [ -z "$ORIGINAL_BITRATE" ]; then
     FILE_SIZE=$(stat -c%s "$INPUT")  # Linux
     # FILE_SIZE=$(stat -f%z "$INPUT") # macOS
@@ -74,15 +81,14 @@ if [ -z "$ORIGINAL_BITRATE" ]; then
     fi
 fi
 
-# Check if bitrate was determined
-if [ -z "$ORIGINAL_BITRATE" ] || [ "$ORIGINAL_BITRATE" -le 0 ]; then
-    echo "Error: Could not determine the original bitrate." | lolcat
+# Check if bitrate was determined or is valid
+# Also handle weird negative or zero bitrates, just in case
+if ! [[ "$ORIGINAL_BITRATE" =~ ^[0-9]+$ ]] || [ "$ORIGINAL_BITRATE" -le 0 ]; then
+    echo "Error: Could not determine the original bitrate in numeric form." | lolcat
     exit 1
 fi
 
 # Calculate the target bitrate (convert to kbps).
-# The user-specified percentage (PERCENT) is applied here.
-# PERCENT=50 means ~50% of original size, so the video bitrate is halved, etc.
 TARGET_BITRATE=$(( ORIGINAL_BITRATE * PERCENT / 100 / 1000 ))
 
 # Set audio bitrate (adjust as needed)
@@ -97,13 +103,12 @@ echo "Output File: $OUTPUT" | lolcat
 echo "Two-Pass Encoding" | lolcat
 echo "Starting Pass 1..." | lolcat
 
-# First pass command (echo it before running)
+# First pass command
 echo
 echo "Running first pass command:" | lolcat
-echo "ffmpeg -y -i \"$INPUT\" -c:v libvpx-vp9 -b:v \"${TARGET_BITRATE}k\" -pass 1 -speed 4 -threads -row-mt 1 $THREADS -an -f null /dev/null" | lolcat
+echo "ffmpeg -y -i \"$INPUT\" -c:v libvpx-vp9 -b:v \"${TARGET_BITRATE}k\" -pass 1 -speed 4 -row-mt 1 -threads $THREADS -an -f null /dev/null" | lolcat
 echo
 
-# First pass (ffmpeg output uncolorized)
 ffmpeg -y -i "$INPUT" \
        -c:v libvpx-vp9 \
        -b:v "${TARGET_BITRATE}k" \
@@ -122,13 +127,12 @@ fi
 
 echo "Pass 1 Complete. Starting Pass 2..." | lolcat
 
-# Second pass command (echo it before running)
+# Second pass command
 echo
 echo "Running second pass command:" | lolcat
 echo "ffmpeg -i \"$INPUT\" -c:v libvpx-vp9 -b:v \"${TARGET_BITRATE}k\" -pass 2 -speed 4 -threads $THREADS -row-mt 1 -c:a libopus -b:a \"$AUDIO_BITRATE\" \"$OUTPUT\"" | lolcat
 echo
 
-# Second pass (ffmpeg output uncolorized)
 ffmpeg -i "$INPUT" \
        -c:v libvpx-vp9 \
        -b:v "${TARGET_BITRATE}k" \
@@ -147,7 +151,6 @@ if [ $? -ne 0 ]; then
 fi
 
 echo "Cleanup" | lolcat
-# Clean up two-pass log files
 rm -f ffmpeg2pass-0.log ffmpeg2pass-0.log.mbtree
 
 echo
