@@ -135,7 +135,8 @@ va () { . $1/bin/activate; }
 
 alias vl='vault ' vtl='echo "vault token lookup"; vault token lookup | grep -v "^id" '
 alias wh='which'
-alias x='xdg-open'
+alias x='chmod +x'
+alias xo='xdg-open'
 alias yt='yt-dlp'
 alias zkeys='zfs get keystatus  -t filesystem; echo; zfs get keystatus  -t volume'
 alias zles='zless'
