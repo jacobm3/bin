@@ -1,0 +1,9 @@
+alternative to truenas. set this up in proxmox on top of zfs.
+
+https://www.techrepublic.com/article/cockpit-creating-samba-shares-simple/
+https://github.com/45Drives/cockpit-file-sharing
+https://github.com/45drives/cockpit-identities
+
+curl -sSL https://repo.45drives.com/setup | sudo bash
+sudo apt-get update
+sudo apt install cockpit-file-sharing cockpit-identities samba
