@@ -1,0 +1,25 @@
+apt install samba smbclient
+
+NEWUSER=j
+
+mkdir /var/share
+chown $NEWUSER /var/share
+cat >> /etc/samba/smb.conf <<EOF
+
+[test-share-name]
+path = /var/share
+browsable = yes
+read only = no
+guest ok = no
+valid users = $NEWUSER
+
+EOF
+
+useradd -m -s /bin/bash $NEWUSER
+smbpasswd -a $NEWUSER
+
+testparm
+
+systemctl restart smbd
+systemctl restart nmbd
+
